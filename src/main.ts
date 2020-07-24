@@ -40,10 +40,15 @@ class Main {
             .setNumero(101)
             .setNom('Latte')
             .setPrenom('Trudy')
+
         // Sets a new address
         const trudysHome: Adresse = new Adresse()
         trudysHome.setAdressePostale('Le fond du trou\nBâle\nSuisse')
         trudy.addAdresse(trudysHome)
+
+        // Afficher les informations des contacts
+        $('body').append(trudy.getAvatar())
+        $('body').append(jeanLuc.getAvatar())
     }
 }
 

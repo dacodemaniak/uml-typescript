@@ -1,0 +1,9 @@
+.avatar {
+    width: 2.5em;
+    padding: .5em;
+    font-weight: bold;
+    &.light {
+        background-color: #cccccc;
+        color: #000;
+    }
+}

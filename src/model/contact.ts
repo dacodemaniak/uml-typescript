@@ -1,5 +1,7 @@
 import { Adresse } from "./adresse";
 
+import * as $ from 'jquery'
+
 /**
  * @name Contact
  * @author ADRAR - Juil. 2020
@@ -60,12 +62,40 @@ export class Contact {
     }
 
     /**
+     * @return String
+     */
+    public getNom(): string {
+        return this.nom.toString()
+    }
+
+    /**
      * @param String Prénom du contact
      * @return Contact
      */
     public setPrenom(prenom: String): Contact {
         this.prenom = prenom
         return this
+    }
+
+    public getPrenom(): string {
+        return this.prenom.toString()
+    }
+
+    public getAvatar(): JQuery {
+        const content: JQuery = $('<p>')
+        const avatar: JQuery = $('<i>')
+        avatar.html((this.prenom[0] + this.nom[0]).toUpperCase())
+        avatar
+            .addClass('circle')
+            .addClass('avatar')
+            .addClass('light')
+            .css('margin-right', '.3em')
+
+        content
+            .append(avatar)
+            .append(this.prenom.toString() + ' ' + this.nom.toString())
+
+        return content
     }
 
     /**

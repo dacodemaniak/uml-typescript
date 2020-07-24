@@ -1,0 +1,8 @@
+/**
+* main.scss
+*   Main scss file to load some other resources
+**/
+$material-icons-font-path: '/fonts/';
+
+@import "~materialize-css/sass/materialize.scss";
+@import "~material-icons/iconfont/material-icons.scss";

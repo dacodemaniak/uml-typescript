@@ -1,5 +1,7 @@
 import * as $ from 'jquery'
 
+import './scss/main.scss'
+
 /**
  * @name Main
  * @author IDea Factory - Juil. 2020 - jean-luc.a@ideafactory.fr

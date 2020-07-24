@@ -23,11 +23,27 @@ class Main {
         jeanLuc.setPrenom('Jean-Luc')
 
         // Create an Adress instance
-        const adresse: Adresse = new Adresse()
-        adresse.setAdressePostale('12, rue du code\n31000 Toulouse')
+        const chezMoi: Adresse = new Adresse()
+        chezMoi.setAdressePostale('12, rue du code\n31000 Toulouse')
 
-        // Set the address for jeanLuc
-        jeanLuc.addAdresse(adresse)
+        // Create second address... jeanLuc is rich !
+        const mySweetHome: Adresse = new Adresse()
+        mySweetHome.setAdressePostale('rue de la plage\nCopacabana')
+
+        // Add the address for jeanLuc
+        jeanLuc.addAdresse(chezMoi)
+        jeanLuc.addAdresse(mySweetHome)
+
+        // Define Trudy Latte
+        const trudy: Contact = new Contact()
+        trudy
+            .setNumero(101)
+            .setNom('Latte')
+            .setPrenom('Trudy')
+        // Sets a new address
+        const trudysHome: Adresse = new Adresse()
+        trudysHome.setAdressePostale('Le fond du trou\nBâle\nSuisse')
+        trudy.addAdresse(trudysHome)
     }
 }
 

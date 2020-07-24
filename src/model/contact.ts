@@ -33,6 +33,10 @@ export class Contact {
      */
     private adresses: Adresse[]
 
+    public constructor() {
+        this.adresses = [] // Initialise le tableau des adresses d'un contact
+    }
+
     /**
      * @param Number numéro à affecter à l'objet courant
      * @return Contact Retourne l'objet courant

@@ -16,6 +16,8 @@ class Main {
     public constructor() {
         console.log('Application is ready')
 
+        const contacts: Contact[] = []
+
         // Create a Contact instance
         const jeanLuc: Contact = new Contact()
         jeanLuc.setNumero(100)
@@ -34,6 +36,9 @@ class Main {
         jeanLuc.addAdresse(chezMoi)
         jeanLuc.addAdresse(mySweetHome)
 
+        // Add contact to contact list
+        contacts.push(jeanLuc)
+
         // Define Trudy Latte
         const trudy: Contact = new Contact()
         trudy
@@ -46,9 +51,25 @@ class Main {
         trudysHome.setAdressePostale('Le fond du trou\nBâle\nSuisse')
         trudy.addAdresse(trudysHome)
 
+        contacts.push(trudy)
+
         // Afficher les informations des contacts
-        $('body').append(trudy.getAvatar())
-        $('body').append(jeanLuc.getAvatar())
+        const uiCollection: JQuery = ($('<ul>'))
+            .addClass('collection')
+
+        for (let contact of contacts) {
+            const avatar: JQuery = contact.getAvatar()
+            // Add secondary content
+            const secondaryContent: JQuery = $('<a>')
+                .addClass('secondary-content')
+            const icon: JQuery = $('<i>')
+                .addClass('material-icons')
+                .html('arrow_forward')
+                .appendTo(secondaryContent)
+            avatar.append(secondaryContent)
+            uiCollection.append(avatar)
+        }
+        $('body').append(uiCollection)
     }
 }
 

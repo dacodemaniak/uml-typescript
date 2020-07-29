@@ -4,6 +4,7 @@ import { Telephone } from './model/telephone';
 import { Email } from './model/e-mail';
 import { Adresse } from './model/adresse';
 import * as $ from 'jquery'
+import * as M from 'materialize-css'
 
 // Import Contact model
 import { Contact } from './model/contact'
@@ -24,6 +25,7 @@ class Main {
 
         // Create a Contact instance
         const jeanLuc: Contact = new Contact()
+
         jeanLuc.setNumero(100)
         jeanLuc.setNom('Aubert')
         jeanLuc.setPrenom('Jean-Luc')
@@ -41,9 +43,6 @@ class Main {
         fixedPhone.setPhoneNumber('0563214578')
 
         jeanLuc.addPhone(fixedPhone) // Add a fixed phone number to jeanluc Contact object
-
-        const undefinedTypePhone: Telephone = new Telephone()
-        undefinedTypePhone.setPhoneNumber('x-files number')
         
 
         // Create an Adress instance
@@ -97,5 +96,9 @@ class Main {
 
 $(function() {
     const app = new Main()
+
+    // Materialize select element handling
+    const elements = document.querySelectorAll('select')
+    const instances = M.FormSelect.init(elements, {})
 })
 

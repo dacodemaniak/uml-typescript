@@ -5,7 +5,8 @@
     "main": "./dist/main.js",
     "scripts": {
         "webpack:dev": "webpack --watch --mode development",
-        "webpack:build": "webpack --mode production -p"
+        "webpack:build": "webpack --mode production -p",
+        "serve": "http-server ./dist -c-1 -o"
     },
     "keywords": [
         "Typescript",
@@ -22,6 +23,7 @@
         "@babel/core": "^7.10",
         "@babel/preset-env": "^7.10",
         "@types/jquery": "3.3.1",
+        "@types/materialize-css": "^1.0.8",
         "babel-cli": "^6.26",
         "babel-loader": "^8.1",
         "copy-webpack-plugin": "6.0.3",

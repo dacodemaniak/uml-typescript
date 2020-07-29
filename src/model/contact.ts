@@ -1,3 +1,4 @@
+import { Telephone } from './telephone';
 import { Email } from './e-mail';
 import { Adresse } from "./adresse";
 
@@ -42,9 +43,15 @@ export class Contact {
      */
     private emails: Email[];
 
+    /**
+     * @var Telephone[]
+     */
+    private phones: Telephone[]
+
     public constructor() {
         this.adresses = [] // Initialise le tableau des adresses d'un contact
         this.emails = []; // Sets emails array
+        this.phones = []; // Sets phones array
     }
 
     /**
@@ -126,6 +133,12 @@ export class Contact {
 
     public addEmail(email: Email): Contact {
         this.emails.push(email)
+
+        return this
+    }
+
+    public addPhone(phone: Telephone): Contact {
+        this.phones.push(phone)
 
         return this
     }

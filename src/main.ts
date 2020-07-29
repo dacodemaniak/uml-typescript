@@ -1,3 +1,6 @@
+import { FixedPhone } from './model/fixed-phone';
+import { CellPhone } from './model/cell-phone';
+import { Telephone } from './model/telephone';
 import { Email } from './model/e-mail';
 import { Adresse } from './model/adresse';
 import * as $ from 'jquery'
@@ -28,7 +31,21 @@ class Main {
         const myEmail = new Email()
         myEmail.setEmail('jla@truc.com')
         jeanLuc.addEmail(myEmail) // Add an email to jeanluc object
+
+        const myCellPhone: CellPhone = new CellPhone()
+        myCellPhone.setPhoneNumber('0623568974')
+
+        jeanLuc.addPhone(myCellPhone) // Add a phone for jeanluc Contact object
+
+        const fixedPhone: FixedPhone = new FixedPhone()
+        fixedPhone.setPhoneNumber('0563214578')
+
+        jeanLuc.addPhone(fixedPhone) // Add a fixed phone number to jeanluc Contact object
+
+        const undefinedTypePhone: Telephone = new Telephone()
+        undefinedTypePhone.setPhoneNumber('x-files number')
         
+
         // Create an Adress instance
         const chezMoi: Adresse = new Adresse()
         chezMoi.setAdressePostale('12, rue du code\n31000 Toulouse')

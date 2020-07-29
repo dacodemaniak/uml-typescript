@@ -1,3 +1,4 @@
+import { Email } from './model/e-mail';
 import { Adresse } from './model/adresse';
 import * as $ from 'jquery'
 
@@ -24,6 +25,10 @@ class Main {
         jeanLuc.setNom('Aubert')
         jeanLuc.setPrenom('Jean-Luc')
 
+        const myEmail = new Email()
+        myEmail.setEmail('jla@truc.com')
+        jeanLuc.addEmail(myEmail) // Add an email to jeanluc object
+        
         // Create an Adress instance
         const chezMoi: Adresse = new Adresse()
         chezMoi.setAdressePostale('12, rue du code\n31000 Toulouse')
@@ -64,7 +69,7 @@ class Main {
                 .addClass('secondary-content')
             const icon: JQuery = $('<i>')
                 .addClass('material-icons')
-                .html('arrow_forward')
+                .html('face')
                 .appendTo(secondaryContent)
             avatar.append(secondaryContent)
             uiCollection.append(avatar)

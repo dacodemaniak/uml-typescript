@@ -1,3 +1,4 @@
+import { Email } from './e-mail';
 import { Adresse } from "./adresse";
 
 import * as $ from 'jquery'
@@ -35,8 +36,15 @@ export class Contact {
      */
     private adresses: Adresse[]
 
+    /**
+     * @var Email[]
+     * @see Email
+     */
+    private emails: Email[];
+
     public constructor() {
         this.adresses = [] // Initialise le tableau des adresses d'un contact
+        this.emails = []; // Sets emails array
     }
 
     /**
@@ -77,12 +85,20 @@ export class Contact {
         return this
     }
 
+    public definirPrenom(prenom: String): Contact {
+        this.prenom = prenom
+
+        return this
+    }
+
     public getPrenom(): string {
         return this.prenom.toString()
     }
 
     public getAvatar(): JQuery {
-        const content: JQuery = $('<p>')
+        const content: JQuery = $('<li>')
+            .addClass('collection-item')
+            .addClass('avatar')
         const avatar: JQuery = $('<i>')
         avatar.html((this.prenom[0] + this.nom[0]).toUpperCase())
         avatar
@@ -93,7 +109,7 @@ export class Contact {
 
         content
             .append(avatar)
-            .append(this.prenom.toString() + ' ' + this.nom.toString())
+            .append('<span class="title">' + this.prenom.toString() + ' ' + this.nom.toString() + "</span>")
 
         return content
     }
@@ -104,6 +120,12 @@ export class Contact {
      */
     public addAdresse(adresse: Adresse): Contact {
         this.adresses.push(adresse)
+
+        return this
+    }
+
+    public addEmail(email: Email): Contact {
+        this.emails.push(email)
 
         return this
     }

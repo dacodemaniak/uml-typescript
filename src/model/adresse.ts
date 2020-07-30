@@ -5,6 +5,7 @@
  * @abstract Modèle pour les adresses postales
  */
 export class Adresse {
+
     /**
      * @var String Adresse postale
      */
@@ -17,5 +18,9 @@ export class Adresse {
     public setAdressePostale(adressePostale: String): Adresse {
         this.adressePostale = adressePostale
         return this
+    }
+
+    getAdressePostale(): string {
+        return this.adressePostale.toString()
     }
 }

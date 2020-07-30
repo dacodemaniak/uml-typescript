@@ -4,7 +4,10 @@
 **/
 $material-icons-font-path: '/assets/fonts/';
 
+
 @import "~materialize-css/sass/materialize.scss";
-@import "~material-icons/iconfont/material-icons.scss";
+
 
 @import "./avatar.scss";
+
+@import "~material-icons/iconfont/material-icons.scss";

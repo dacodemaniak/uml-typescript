@@ -42,7 +42,7 @@ module.exports = {
                     loader: 'file-loader',
                     options: {
                       name: '[name].[ext]',
-                      outputPath: 'assets/fonts'
+                      outputPath: 'assets/fonts/'
                     }
                   }
                 ]
@@ -65,6 +65,10 @@ module.exports = {
                         from: 'src/index.html',
                         to: 'index.html',
                         flatten: true
+                    },
+                    {
+                        from: 'src/fonts',
+                        to: 'assets/fonts'
                     }
                 ]
             }

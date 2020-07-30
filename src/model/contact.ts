@@ -49,8 +49,8 @@ export class Contact {
     private phones: Telephone[]
 
     public constructor() {
-        this.adresses = [] // Initialise le tableau des adresses d'un contact
-        this.emails = []; // Sets emails array
+        this.adresses = [] // Initialise le tableau des adresses de ce (this) contact
+        this.emails = []; // Sets emails array of (this) ce contact
         this.phones = []; // Sets phones array
     }
 
@@ -60,7 +60,7 @@ export class Contact {
      */
     public setNumero(numero: Number): Contact {
         if (numero >= 100) {
-           this.numero = numero // Range le param numero dans l'attribut numero
+           this.numero = numero // Range le param numero dans l'attribut numero de CE contact
            return this
         }
             
@@ -117,6 +117,15 @@ export class Contact {
         content
             .append(avatar)
             .append('<span class="title">' + this.prenom.toString() + ' ' + this.nom.toString() + "</span>")
+
+        const address: JQuery = $('<ul>') // Equiv createElement('ul')
+        this.adresses.forEach((adresse) => {
+            const addressLi: JQuery = $('<li>')
+            addressLi.html(adresse.getAdressePostale()) // Equiv textContent()
+            addressLi.appendTo(address) // JS Natif : appendChild
+        })
+        
+        content.append(address)
 
         return content
     }

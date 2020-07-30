@@ -85,7 +85,7 @@ class Main {
                 .addClass('secondary-content')
             const icon: JQuery = $('<i>')
                 .addClass('material-icons')
-                .html('face')
+                .html('arrow_forward')
                 .appendTo(secondaryContent)
             avatar.append(secondaryContent)
             uiCollection.append(avatar)
